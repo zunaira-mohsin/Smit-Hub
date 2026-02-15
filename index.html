@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saylani Campus Portal</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="smit-logo.png" alt="Saylani Logo" class="logo">
+    <h1 class="main-heading">Smit Student Portal</h1>
+  </header>
+
+  <!-- Authentication Pages -->
+  <div id="auth">
+    <!-- Login Form -->
+    <div id="login" class="auth-form active">
+      <h2 class="heading">Login</h2>
+      <form id="loginForm">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <span id="showSignup">Sign Up</span></p>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signup" class="auth-form">
+      <h2 class="heading">Sign Up</h2>
+      <form id="signupForm">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <span id="showLogin">Login</span></p>
+    </div>
+  </div>
+
+  <!-- Main Portal -->
+  <div id="portal" style="display:none;">
+    <!-- Navigation Tabs -->
+    <nav>
+      <button class="tab-btn active" data-tab="lostfound">Lost & Found</button>
+      <button class="tab-btn" data-tab="complaints">Complaints</button>
+      <button class="tab-btn" data-tab="volunteer">Volunteer Registration</button>
+      <button id="logoutBtn">Logout</button>
+    </nav>
+
+    <main>
+      <!-- Lost & Found -->
+      <section id="lostfound" class="tab-content active">
+        <h2 class="heading2">Lost & Found</h2>
+        <form id="lostFoundForm">
+          <input type="text" placeholder="Item Name" required>
+          <textarea placeholder="Description" required></textarea>
+          <select required>
+            <option value="">Lost or Found?</option>
+            <option value="Lost">Lost</option>
+            <option value="Found">Found</option>
+          </select>
+          <button type="submit">Submit</button>
+        </form>
+        <ul id="lostFoundList"></ul>
+      </section>
+
+      <!-- Complaints -->
+      <section id="complaints" class="tab-content">
+        <h2 class="heading2">Submit a Complaint</h2>
+        <form id="complaintForm">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Email" required>
+          <select required>
+            <option value="">Select Category</option>
+            <option value="Internet">Internet</option>
+            <option value="Electricity">Electricity</option>
+            <option value="Water">Water</option>
+            <option value="Maintenance">Maintenance</option>
+          </select>
+          <textarea placeholder="Describe your issue" required></textarea>
+          <button type="submit">Submit Complaint</button>
+        </form>
+        <ul id="complaintList"></ul>
+      </section>
+
+      <!-- Volunteer Registration -->
+      <section id="volunteer" class="tab-content">
+        <h2 class="heading2">Volunteer Registration</h2>
+        <form id="volunteerForm">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email" required>
+          <input type="text" placeholder="Phone Number" required>
+          <button type="submit">Register</button>
+        </form>
+        <ul id="volunteerList"></ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
